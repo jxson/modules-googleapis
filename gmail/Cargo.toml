@@ -1,0 +1,10 @@
+[package]
+name = "gmail"
+version = "0.1.0"
+authors = ["Jason Campbell <jasoncampbell@google.com>"]
+
+[lib]
+name = "gmail"
+path = "src/lib.rs"
+
+[dependencies]

@@ -1,0 +1,15 @@
+// Copyright 2017 The Fuchsia Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module gmail;
+
+import "apps/modules/googleapis/services/gmail/label.fidl";
+
+interface Labels {
+  Create(Label label) => (Status status, Label? label);
+  Delete(string id) => (Status status);
+  Delete(string id) => (Status status, Label? label);
+  List() => (Status status, array<Label>? labels);
+  Patch(Label label) => (Status status, Label? label);
+}
