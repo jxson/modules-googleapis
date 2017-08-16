@@ -1,0 +1,21 @@
+# Copyright 2017 The Fuchsia Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//lib/fidl/fidl.gni")
+
+fidl("gmail") {
+  sources = [
+    "label.fidl",
+    "labels.fidl",
+  ]
+}
+
+# _gmail.users.labels.get('me', id);
+# _gmail.users.labels.list('me');
+# _gmail.users.threads.get('me', id);
+# _gmail.users.history.list(...
+# _gmail.users.threads.list(
+# _gmail.users.messages.modify(request, 'me', id);
+# _gmail.users.threads.modify(request, 'me', id);
+# _gmail.users.threads.trash('me', id);

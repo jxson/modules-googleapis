@@ -6,10 +6,12 @@ module gmail;
 
 import "apps/modules/googleapis/services/gmail/label.fidl";
 
+// SEE: https://developers.google.com/gmail/api/v1/reference/users/labels
 interface Labels {
   Create(Label label) => (Status status, Label? label);
   Delete(string id) => (Status status);
-  Delete(string id) => (Status status, Label? label);
+  Get(string id) => (Status status, Label? label);
   List() => (Status status, array<Label>? labels);
   Patch(Label label) => (Status status, Label? label);
-}
+  Update(Label label) => (Status status, Label? label);
+};

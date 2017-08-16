@@ -12,7 +12,7 @@ enum LabelListVisibility {
   SHOW,
   // Show the label if there are any unread messages with that label.
   SHOW_IF_UNREAD,
-}
+};
 
 // The visibility of messages with this label in the message list in the Gmail web interface.
 enum MessageListVisibility {
@@ -20,7 +20,7 @@ enum MessageListVisibility {
   HIDE,
   // Show the label in the message list. (Default)
   SHOW,
-}
+};
 
 // The owner type for the label. User labels are created by the user and can be
 // modified and deleted by the user and can be applied to any message or thread.
@@ -31,36 +31,22 @@ enum MessageListVisibility {
 // threads, but cannot apply or remove the DRAFTS or SENT labels from messages
 // or threads.
 enum LabelType {
+  // Labels created by Gmail.
   SYSTEM,
+  // Custom labels created by the user or application.
   USER,
-}
+};
 
-// Label
+// The FIDL defintion for Gmail's Label Resource.
+// See: SEE: https://developers.google.com/gmail/api/v1/reference/users/labels#resource
 struct Label {
-  // The immutable ID of the label.
   string id;
-
-  // The display name of the label.
-  string name:
-
-  // The owner type for the label.
+  string name;
   LabelType type;
-
-  // The visibility of the label in the label list in the Gmail web interface.
   LabelListVisibility labelListVisibility;
-
-  // The visibility of messages with this label in the message list in the Gmail web interface.
   MessageListVisibility messageListVisibility;
-
-  // The total number of messages with the label.
   uint32 messagesTotal;
-
-  // The number of unread messages with the label.
   uint32 messagesUnread;
-
-  // The total number of threads with the label.
   uint32 threadsTotal;
-
-  // The number of unread threads with the label.
   uint32 threadsUnread;
 };
