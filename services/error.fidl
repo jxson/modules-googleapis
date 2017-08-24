@@ -1,0 +1,26 @@
+// Copyright 2017 The Fuchsia Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// Error definition that maps directly to Google Cloud API error responses.
+// See: https://developers.google.com/drive/v3/web/handle-errors
+
+// The Error types are intended to convey enough information to clients so
+// errors can be responded to automatically when possible. If an automatic
+// response is not possible `ErrorCause` information is added so that something
+// useful can be logged and possibly shown to the end-user in UI.
+
+module googleapis;
+
+struct ErrorCause {
+  string domain;
+  string reason;
+  string message;
+  string extendedHelp;
+};
+
+struct Error {
+  array<ErrorCause> errors;
+  uint32 code;
+  string message;
+};

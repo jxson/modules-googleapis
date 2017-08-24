@@ -1,0 +1,46 @@
+// Copyright 2017 The Fuchsia Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+module googleapis.gmail;
+
+import "apps/modules/googleapis/services/error.fidl";
+
+// FIDL defintions for Gmail Label Resources and Labels service.
+// See: https://developers.google.com/gmail/api/v1/reference/users/labels
+enum LabelListVisibility {
+  HIDE,
+  SHOW,
+  SHOW_IF_UNREAD,
+};
+
+enum MessageListVisibility {
+  HIDE,
+  SHOW,
+};
+
+enum LabelType {
+  SYSTEM,
+  USER,
+};
+
+struct Label {
+  string id;
+  string name;
+  LabelType type;
+  LabelListVisibility labelListVisibility;
+  MessageListVisibility messageListVisibility;
+  uint32 messagesTotal;
+  uint32 messagesUnread;
+  uint32 threadsTotal;
+  uint32 threadsUnread;
+};
+
+interface Labels {
+  Create(Label label) => (googleapis.Error? error, Label? label);
+  Delete(string id) => (googleapis.Error? error);
+  Get(string id) => (googleapis.Error? error, Label? label);
+  List() => (googleapis.Error? error, array<Label>? labels);
+  Patch(Label label) => (googleapis.Error? error, Label? label);
+  Update(Label label) => (googleapis.Error? error, Label? label);
+};
