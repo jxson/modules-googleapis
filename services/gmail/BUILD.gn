@@ -6,7 +6,7 @@ import("//garnet/public/lib/fidl/fidl.gni")
 
 fidl("gmail") {
   public_deps = [
-    "//apps/modules/googleapis/services:error",
+    "//apps/modules/googleapis/services/errors",
   ]
 
   sources = [

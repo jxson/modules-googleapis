@@ -12,12 +12,10 @@ package("googleapis") {
     "//apps/modules/googleapis/services",
   ]
 
-  binaries = [
-    {
-      name = "googleapis/gmail"
-      source = "gmail.dartx"
-    },
-  ]
+  binaries = [ {
+        name = "googleapis/gmail"
+        source = "gmail.dartx"
+      } ]
 }
 
 package("test") {

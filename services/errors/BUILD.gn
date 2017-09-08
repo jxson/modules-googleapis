@@ -4,9 +4,8 @@
 
 import("//garnet/public/lib/fidl/fidl.gni")
 
-group("services") {
-  deps = [
-    "errors",
-    "gmail",
+fidl("errors") {
+  sources = [
+    "error.fidl",
   ]
 }

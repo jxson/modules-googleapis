@@ -13,7 +13,11 @@ dart_app("gmail") {
     "//apps/maxwell/services/suggestion:suggestion_dart",
     "//apps/modular/services/agent:agent_dart",
     "//apps/modular/services/auth:auth_dart",
+    "//apps/modules/googleapis/services/errors:errors_dart",
+    "//apps/modules/googleapis/services/gmail:gmail_dart",
     "//garnet/public/lib/fidl/dart",
+    "//third_party/dart-pkg/pub/googleapis",
+    "//third_party/dart-pkg/pub/googleapis_auth",
     "//topaz/lib/widgets/packages/logging:lib.logging",
     "//topaz/lib/widgets/packages/modular:lib.modular",
   ]

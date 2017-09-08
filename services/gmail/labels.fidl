@@ -4,7 +4,7 @@
 
 module googleapis.gmail;
 
-import "apps/modules/googleapis/services/error.fidl";
+import "apps/modules/googleapis/services/errors/error.fidl";
 
 // FIDL defintions for Gmail Label Resources and Labels service.
 // See: https://developers.google.com/gmail/api/v1/reference/users/labels
